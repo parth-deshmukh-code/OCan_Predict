@@ -93,6 +93,8 @@ Another of my reasons is that what I learn about software engineering, I like to
 - [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
 - [JustMock](https://github.com/telerik/JustMockLite)
 - [coverlet.msbuild](https://github.com/coverlet-coverage/coverlet)
+- [Respawn](https://github.com/jbogard/Respawn)
+- [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing)
 - [Microsoft.Bot.Builder.Testing](https://www.nuget.org/packages/Microsoft.Bot.Builder.Testing)
 
 ### Own libraries
