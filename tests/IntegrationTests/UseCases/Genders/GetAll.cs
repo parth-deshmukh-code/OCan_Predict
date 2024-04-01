@@ -7,7 +7,7 @@ public class GetGenders : TestBase
     {
         // Arrange
         var client = ApplicationFactory.CreateClient();
-        var requestUri = "/gender";
+        var requestUri = TestSettings.BaseUri + "gender";
         var expectedGenders = GetGenderList();
         await AddRangeAsync(expectedGenders);
 
