@@ -7,7 +7,7 @@ public class GetKinships : TestBase
     {
         // Arrange
         var client = ApplicationFactory.CreateClient();
-        var requestUri = TestSettings.BaseUri + "kinship";
+        var requestUri = $"{TestSettings.BaseUri}kinship";
         var expectedKinships = GetKinshipList();
         await AddRangeAsync(expectedKinships);
 
