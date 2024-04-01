@@ -16,6 +16,9 @@ global using DentallApp.Shared.Constants;
 global using DentallApp.Shared.Entities;
 global using DentallApp.Shared.Resources.Genders;
 global using DentallApp.Shared.Resources.Kinships;
+global using DentallApp.Shared.Resources.Statuses;
 global using DentallApp.Shared.Models.Claims;
+
+global using DentallApp.Core.Persons.UseCases;
 
 global using IntegrationTests.Common;
