@@ -1,6 +1,6 @@
 ﻿namespace IntegrationTests.UseCases.Kinships;
 
-public class GetKinshipsTest : TestBase
+public class GetKinships : TestBase
 {
     [Test]
     public async Task Get_WhenKinshipsAreObtained_ShouldReturnsHttpStatusCodeOk()
@@ -8,7 +8,7 @@ public class GetKinshipsTest : TestBase
         // Arrange
         var client = ApplicationFactory.CreateClient();
         var requestUri = "/kinship";
-        var expectedKinships = GetKinships();
+        var expectedKinships = GetKinshipList();
         await AddRangeAsync(expectedKinships);
 
         // Act
@@ -22,7 +22,7 @@ public class GetKinshipsTest : TestBase
         result.Should().BeEquivalentTo(expectedKinships);
     }
 
-    private static List<Kinship> GetKinships()
+    private static List<Kinship> GetKinshipList()
         =>
         [
             new() { Id = 1, Name = KinshipName.Spouse },

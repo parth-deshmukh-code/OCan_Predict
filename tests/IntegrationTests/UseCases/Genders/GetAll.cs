@@ -1,6 +1,6 @@
 ﻿namespace IntegrationTests.UseCases.Genders;
 
-public class GetGendersTest : TestBase
+public class GetGenders : TestBase
 {
     [Test]
     public async Task Get_WhenGendersAreObtained_ShouldReturnsHttpStatusCodeOk()
@@ -8,7 +8,7 @@ public class GetGendersTest : TestBase
         // Arrange
         var client = ApplicationFactory.CreateClient();
         var requestUri = "/gender";
-        var expectedGenders = GetGenders();
+        var expectedGenders = GetGenderList();
         await AddRangeAsync(expectedGenders);
 
         // Act
@@ -22,7 +22,7 @@ public class GetGendersTest : TestBase
         result.Should().BeEquivalentTo(expectedGenders);
     }
 
-    private static List<Gender> GetGenders()
+    private static List<Gender> GetGenderList()
         =>
         [
             new() { Id = 1, Name = GenderName.Male },
