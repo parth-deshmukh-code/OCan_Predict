@@ -3,7 +3,7 @@
 public class GetGenders : TestBase
 {
     [Test]
-    public async Task Get_WhenGendersAreObtained_ShouldReturnsHttpStatusCodeOk()
+    public async Task Get_WhenGendersAreObtained_ShouldReturnsOk()
     {
         // Arrange
         var client = ApplicationFactory.CreateClient();

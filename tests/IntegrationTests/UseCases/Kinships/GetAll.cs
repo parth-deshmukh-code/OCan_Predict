@@ -3,7 +3,7 @@
 public class GetKinships : TestBase
 {
     [Test]
-    public async Task Get_WhenKinshipsAreObtained_ShouldReturnsHttpStatusCodeOk()
+    public async Task Get_WhenKinshipsAreObtained_ShouldReturnsOk()
     {
         // Arrange
         var client = ApplicationFactory.CreateClient();
