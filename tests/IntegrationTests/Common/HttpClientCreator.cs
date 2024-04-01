@@ -63,7 +63,7 @@ public partial class TestBase
 
     protected HttpClient CreateClientAsUser(UserClaims user)
     {
-        using var httpClient = ApplicationFactory.CreateClient();
+        var httpClient = ApplicationFactory.CreateClient();
         using var serviceScope = ApplicationFactory.Services.CreateScope();
         var tokenService = serviceScope.ServiceProvider.GetService<ITokenService>();
         var accessToken = tokenService.CreateAccessToken(user);
@@ -76,7 +76,7 @@ public partial class TestBase
 
     protected HttpClient CreateClientAsEmployee(EmployeeClaims employee)
     {
-        using var httpClient = ApplicationFactory.CreateClient();
+        var httpClient = ApplicationFactory.CreateClient();
         using var serviceScope = ApplicationFactory.Services.CreateScope();
         var tokenService = serviceScope.ServiceProvider.GetService<ITokenService>();
         var accessToken = tokenService.CreateAccessToken(employee);
