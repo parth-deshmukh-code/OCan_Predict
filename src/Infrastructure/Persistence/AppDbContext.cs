@@ -46,13 +46,16 @@ public partial class AppDbContext(
         AddDbFunctions(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-        // Create seed data.
-        modelBuilder
-            .CreateDefaultRoles()
-            .CreateDefaultKinships()
-            .CreateDefaultAppointmentStatus()
-            .CreateDefaultWeekDays()
-            .CreateDefaultGenders();
+        if (!env.IsEnvironment("Test"))
+        {
+            // Create seed data.
+            modelBuilder
+                .CreateDefaultRoles()
+                .CreateDefaultKinships()
+                .CreateDefaultAppointmentStatus()
+                .CreateDefaultWeekDays()
+                .CreateDefaultGenders();
+        }
 
         if (env.IsDevelopment())
         {

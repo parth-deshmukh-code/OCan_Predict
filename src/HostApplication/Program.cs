@@ -46,9 +46,7 @@ else
 
 app.UseRequestLocalization(appSettings.Language);
 
-app.UseDefaultFiles()
-   .UseStaticFiles()
-   .UseWebSockets()
+app.UseWebSockets()
    .UsePathBase(new PathString("/api"))
    .UseRouting()
    .UseCors(options =>
@@ -62,3 +60,6 @@ app.UseDefaultFiles()
    .UseEndpoints(endpoints => endpoints.MapControllers());
 
 app.Run();
+
+// This class used in the integration test project.
+public partial class Program { }

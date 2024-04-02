@@ -25,6 +25,8 @@ DentallApp is a web application with chatbot for appointment management, reminde
   - [Core layer](#core-layer)
   - [Relational model](#relational-model)
 - [Direct Line API](#direct-line-api)
+- [EF Core Migrations](#ef-core-migrations)
+- [Running tests](#running-tests)
 
 ## Important
 
@@ -54,6 +56,7 @@ Another of my reasons is that what I learn about software engineering, I like to
 - [MariaDB](https://github.com/mariadb)
 - [HeidiSQL](https://github.com/HeidiSQL)
 - [BotFramework-Emulator](https://github.com/microsoft/BotFramework-Emulator)
+- [GitHub Actions](https://github.com/actions)
 - [Git](https://git-scm.com)
 - [draw.io](https://app.diagrams.net)
 
@@ -93,6 +96,8 @@ Another of my reasons is that what I learn about software engineering, I like to
 - [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
 - [JustMock](https://github.com/telerik/JustMockLite)
 - [coverlet.msbuild](https://github.com/coverlet-coverage/coverlet)
+- [Respawn](https://github.com/jbogard/Respawn)
+- [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing)
 - [Microsoft.Bot.Builder.Testing](https://www.nuget.org/packages/Microsoft.Bot.Builder.Testing)
 
 ### Own libraries
@@ -232,7 +237,9 @@ It was decided to implement the logic to validate identity documents from a plug
 
 <details>
 <summary><b>More details</b></summary>
+<br/>
 
+**Overview of each component:**
 - **Host Application.** Contains everything needed to run the application. It represents the entry point of the application.
   This layer performs other tasks such as:
   - Load plugins from a configuration file (.env) using the library called [CPlugin.Net](https://github.com/MrDave1999/CPlugin.Net).
@@ -243,6 +250,7 @@ It was decided to implement the logic to validate identity documents from a plug
   - This layer does not contain the implementation of a functional requirement.
   - It contains other things such as:
     - Extension classes
+    - Exception classes
     - Classes mapped to the database schema (entities)
     - Data models
     - Value objects
@@ -250,7 +258,7 @@ It was decided to implement the logic to validate identity documents from a plug
     - Constants
     - Settings objects
     - Language resources 
-    - Custom validators
+    - Common validation rules
     - Repository and service interfaces
 - **Core Layer.** Contains the main processes (essential features) of the application.
   - Each feature represents a functional requirement of what the app should do. 
@@ -322,3 +330,61 @@ In production, the value of this key must be changed to:
 DIRECT_LINE_BASE_URL=https://directline.botframework.com/
 ```
 In that case the provider to use will be the Direct Line channel of Azure Bot. The backend application is able to switch providers just by reading the URL.
+
+## EF Core Migrations
+
+You can use EF Core migrations to create the database from the entities.
+
+- You must install [dotnet ef](https://learn.microsoft.com/en-us/ef/core/cli/dotnet#installing-the-tools) as a global tool using the following command:
+```sh
+dotnet tool install --global dotnet-ef
+```
+
+- Change directory.
+```sh
+cd src/HostApplication
+```
+
+- Run this command to create the migration files.
+```sh
+dotnet ef migrations add InitialCreate
+```
+
+- At this point you can have EF create your database and create your schema from the migration.
+```sh
+dotnet ef database update
+```
+
+> That's all there is to it - your application is ready to run on your new database, and you didn't need to write a single line of SQL. Note that this way of applying migrations is ideal for local development, but is less suitable for production environments - see the [Applying Migrations](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying) page for more info.
+
+## Running tests
+
+To run the unit tests on your local machine, run this command:
+```sh
+dotnet test ./tests/UnitTests/DentallApp.UnitTests.csproj -c Release
+```
+
+You can also run the chatbot tests on their local machine:
+```sh
+dotnet test ./tests/ChatBot/Plugin.ChatBot.IntegrationTests.csproj -c Release
+```
+
+You can run the integration tests that depend on a database but first you need to follow the following steps:
+- Install [MariaDb Server](https://mariadb.com/downloads) and set up your username and password.
+- Create a file called `.env` in the root directory with the command:
+```sh
+cp .env.example .env
+# On Windows use the "xcopy" command.
+```
+- Create a file called `.env.test` in the test directory with the command:
+```sh
+cp ./tests/IntegrationTests/.env.test.example ./tests/IntegrationTests/.env.test
+# On Windows use the "xcopy" command.
+```
+- Specify your database credentials in the `.env.test` file.
+- Execute the dotnet test command to run the tests.
+```sh
+dotnet test ./tests/IntegrationTests/DentallApp.IntegrationTests.csproj -c Release
+```
+
+> The database credentials you have in the ".env" file may not necessarily be the same as those in the ".env.test" file. For example, the ".env" file may have credentials from a remote AWS database and run the application on your local machine with that connection string.
