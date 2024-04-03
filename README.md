@@ -128,7 +128,11 @@ Software engineering concepts have been applied in this project:
 - [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
 - [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
 
-There is a website called [DevIQ](https://deviq.com), it is useful to learn about design concepts.
+**Additional references:**
+- [Software principles and design](https://deviq.com)
+- [Plugin Architecture Pattern in C#](https://code-maze.com/csharp-plugin-architecture-pattern)
+- [Plugin Architecture Design Pattern](https://www.devleader.ca/2023/09/07/plugin-architecture-design-pattern-a-beginners-guide-to-modularity)
+- [Vertical Slice Architecture in ASP.NET Core](https://code-maze.com/vertical-slice-architecture-aspnet-core)
 
 ## Installation
 
