@@ -1,7 +1,7 @@
 ﻿namespace IntegrationTests.Common;
 
 /// <summary>
-/// This implementation is for testing purposes only and serves to avoid dependence on the system clock.
+/// This implementation is used so that integration tests do not depend on the system clock.
 /// </summary>
 public class TestDateTimeService : IDateTimeService
 {
