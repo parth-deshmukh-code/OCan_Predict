@@ -8,7 +8,7 @@ public class GetGenders : TestBase
         // Arrange
         var client = ApplicationFactory.CreateClient();
         var requestUri = $"{TestSettings.BaseUri}gender";
-        var expectedGenders = GetGenderList();
+        var expectedGenders = BaseSeeds.GetGenders();
         await AddRangeAsync(expectedGenders);
 
         // Act
@@ -21,11 +21,4 @@ public class GetGenders : TestBase
         httpResponse.StatusCode.Should().Be(HttpStatusCode.OK);
         result.Should().BeEquivalentTo(expectedGenders);
     }
-
-    private static List<Gender> GetGenderList()
-        =>
-        [
-            new() { Id = 1, Name = GenderName.Male },
-            new() { Id = 2, Name = GenderName.Female }
-        ];
 }
