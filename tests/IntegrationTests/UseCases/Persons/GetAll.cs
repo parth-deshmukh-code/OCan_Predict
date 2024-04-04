@@ -25,8 +25,7 @@ public class GetPersons : TestBase
                 Email = "roberto123@hotmail.com"
             }
         };
-        await AddRangeAsync(BaseSeeds.GetGenders());
-        await AddRangeAsync(PersonSeeds.GetPersons());
+        await CreateSeedData();
 
         // Act
         var httpResponse = await client.GetAsync(requestUri);
@@ -46,8 +45,7 @@ public class GetPersons : TestBase
         // Arrange
         var client = CreateClientAsSecretary();
         var requestUri = $"{TestSettings.BaseUri}person/search?value={valueToSearch}";
-        await AddRangeAsync(BaseSeeds.GetGenders());
-        await AddRangeAsync(PersonSeeds.GetPersons());
+        await CreateSeedData();
 
         // Act
         var httpResponse = await client.GetAsync(requestUri);
@@ -72,5 +70,11 @@ public class GetPersons : TestBase
 
         // Assert
         httpResponse.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+    }
+
+    private async Task CreateSeedData()
+    {
+        await AddRangeAsync(BaseSeeds.GetGenders());
+        await AddRangeAsync(PersonSeeds.GetPersons());
     }
 }
