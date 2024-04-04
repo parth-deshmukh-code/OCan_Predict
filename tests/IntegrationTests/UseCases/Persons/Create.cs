@@ -18,7 +18,7 @@ public class CreatePerson : TestBase
             Email = "secretary@hotmail.com",
             GenderId = 1
         };
-        await AddAsync(new Gender { Id = 1, Name = GenderName.Male });
+        await AddRangeAsync(BaseSeeds.GetGenders());
 
         // Act
         var httpResponse = await client.PostAsJsonAsync(requestUri, request);

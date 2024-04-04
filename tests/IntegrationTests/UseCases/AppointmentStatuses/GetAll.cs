@@ -8,7 +8,7 @@ public class GetAppointmentStatuses : TestBase
         // Arrange
         var client = ApplicationFactory.CreateClient();
         var requestUri = $"{TestSettings.BaseUri}appointment-status";
-        var expectedStatuses = GetStatusList();
+        var expectedStatuses = BaseSeeds.GetAppointmentStatuses();
         await AddRangeAsync(expectedStatuses);
 
         // Act
@@ -21,13 +21,4 @@ public class GetAppointmentStatuses : TestBase
         httpResponse.StatusCode.Should().Be(HttpStatusCode.OK);
         result.Should().BeEquivalentTo(expectedStatuses);
     }
-
-    private static List<AppointmentStatus> GetStatusList()
-        =>
-        [
-            new() { Id = 1, Name = StatusType.Scheduled },
-            new() { Id = 2, Name = StatusType.NotAssisted },
-            new() { Id = 3, Name = StatusType.Assisted },
-            new() { Id = 4, Name = StatusType.Canceled }
-        ];
 }

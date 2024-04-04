@@ -8,7 +8,7 @@ public class GetKinships : TestBase
         // Arrange
         var client = ApplicationFactory.CreateClient();
         var requestUri = $"{TestSettings.BaseUri}kinship";
-        var expectedKinships = GetKinshipList();
+        var expectedKinships = BaseSeeds.GetKinships();
         await AddRangeAsync(expectedKinships);
 
         // Act
@@ -21,12 +21,4 @@ public class GetKinships : TestBase
         httpResponse.StatusCode.Should().Be(HttpStatusCode.OK);
         result.Should().BeEquivalentTo(expectedKinships);
     }
-
-    private static List<Kinship> GetKinshipList()
-        =>
-        [
-            new() { Id = 1, Name = KinshipName.Spouse },
-            new() { Id = 2, Name = KinshipName.Child },
-            new() { Id = 3, Name = KinshipName.Other }
-        ];
 }
