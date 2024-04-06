@@ -1,8 +1,8 @@
 ﻿namespace IntegrationTests.Common.Seeds;
 
-public static class PersonSeeds
+public class PersonSeeds
 {
-    public static List<Person> GetPersons()
+    public static List<Person> Get()
         =>
         [
             new()
@@ -12,7 +12,7 @@ public static class PersonSeeds
                 Names = "David Sebastian",
                 LastNames = "Roman Amariles",
                 CellPhone = "0953581032",
-                Email = "dave123@hotmail.com",
+                Email = "unverified_user@hotmail.com",
                 DateBirth = new DateTime(1997, 01, 01),
                 GenderId = 1
             },
@@ -23,7 +23,7 @@ public static class PersonSeeds
                 Names = "Roberto Emilio",
                 LastNames = "Placencio Pinto",
                 CellPhone = "0953581040",
-                Email = "roberto123@hotmail.com",
+                Email = "basic_user@hotmail.com",
                 DateBirth = new DateTime(1997, 01, 01),
                 GenderId = 1
             },
@@ -34,7 +34,7 @@ public static class PersonSeeds
                 Names = "Guillermo Emilio",
                 LastNames = "Rivera Pinto",
                 CellPhone = "0953581060",
-                Email = "guillermo123@hotmail.com",
+                Email = "secretary@hotmail.com",
                 DateBirth = new DateTime(1997, 01, 01),
                 GenderId = 1
             },
@@ -45,8 +45,30 @@ public static class PersonSeeds
                 Names = "Derian Emilio",
                 LastNames = "Arias Pinto",
                 CellPhone = "0953581178",
-                Email = "derian123@hotmail.com",
+                Email = "dentist@hotmail.com",
                 DateBirth = new DateTime(1996, 02, 01),
+                GenderId = 1
+            },
+            new()
+            {
+                Id = 5,
+                Document = "0923611901",
+                Names = "Joel Emilio",
+                LastNames = "Delgado Figueroa",
+                CellPhone = "0953581289",
+                Email = "admin@hotmail.com",
+                DateBirth = new DateTime(1996, 05, 02),
+                GenderId = 1
+            },
+            new()
+            {
+                Id = 6,
+                Document = "0923629901",
+                Names = "Johan Elias",
+                LastNames = "Sanchez Pinto",
+                CellPhone = "0953590089",
+                Email = "superadmin@hotmail.com",
+                DateBirth = new DateTime(1998, 08, 27),
                 GenderId = 1
             }
         ];
