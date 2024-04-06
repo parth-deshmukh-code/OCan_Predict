@@ -2,37 +2,36 @@
 
 public partial class TestBase
 {
-    protected HttpClient CreateClientAsBasicUser()
+    protected HttpClient CreateClientAsUnverifiedUser()
         => CreateClientAsUser(new UserClaims
         {
             UserId   = 1,
             PersonId = 1,
+            UserName = "unverified_user@hotmail.com",
+            FullName = "David Sebastian Roman Amariles",
+            Roles    = [RoleName.Unverified]
+        });
+
+
+    protected HttpClient CreateClientAsBasicUser()
+        => CreateClientAsUser(new UserClaims
+        {
+            UserId   = 2,
+            PersonId = 2,
             UserName = "basic_user@hotmail.com",
-            FullName = "Basic User",
+            FullName = "Roberto Emilio Placencio Pinto",
             Roles    = [RoleName.BasicUser]
         });
 
-    protected HttpClient CreateClientAsSuperadmin()
-        => CreateClientAsEmployee(new EmployeeClaims
-        {
-            UserId     = 2,
-            PersonId   = 2,
-            UserName   = "superadmin@hotmail.com",
-            FullName   = "Superadmin",
-            Roles      = [RoleName.Superadmin],
-            EmployeeId = 1,
-            OfficeId   = 1
-        });
-
-    protected HttpClient CreateClientAsAdmin()
+    protected HttpClient CreateClientAsSecretary()
         => CreateClientAsEmployee(new EmployeeClaims
         {
             UserId     = 3,
             PersonId   = 3,
-            UserName   = "admin@hotmail.com",
-            FullName   = "Admin",
-            Roles      = [RoleName.Admin],
-            EmployeeId = 2,
+            UserName   = "secretary@hotmail.com",
+            FullName   = "Guillermo Emilio Rivera Pinto",
+            Roles      = [RoleName.Secretary],
+            EmployeeId = 1,
             OfficeId   = 1
         });
 
@@ -42,24 +41,35 @@ public partial class TestBase
             UserId     = 4,
             PersonId   = 4,
             UserName   = "dentist@hotmail.com",
-            FullName   = "Dentist",
+            FullName   = "Derian Emilio Arias Pinto",
             Roles      = [RoleName.Dentist],
-            EmployeeId = 3,
+            EmployeeId = 2,
             OfficeId   = 1
         });
 
-    protected HttpClient CreateClientAsSecretary()
+    protected HttpClient CreateClientAsAdmin()
         => CreateClientAsEmployee(new EmployeeClaims
         {
             UserId     = 5,
             PersonId   = 5,
-            UserName   = "secretary@hotmail.com",
-            FullName   = "Secretary",
-            Roles      = [RoleName.Secretary],
-            EmployeeId = 4,
+            UserName   = "admin@hotmail.com",
+            FullName   = "Joel Emilio Delgado Figueroa",
+            Roles      = [RoleName.Admin],
+            EmployeeId = 3,
             OfficeId   = 1
         });
 
+    protected HttpClient CreateClientAsSuperadmin()
+        => CreateClientAsEmployee(new EmployeeClaims
+        {
+            UserId     = 6,
+            PersonId   = 6,
+            UserName   = "superadmin@hotmail.com",
+            FullName   = "Johan Elias Sanchez Pinto",
+            Roles      = [RoleName.Superadmin],
+            EmployeeId = 4,
+            OfficeId   = 1
+        });
 
     protected HttpClient CreateClientAsUser(UserClaims user)
     {
