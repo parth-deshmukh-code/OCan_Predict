@@ -22,7 +22,7 @@ public class GetPersons : TestBase
                 LastNames = "Placencio Pinto",
                 FullName = "Roberto Emilio Placencio Pinto",
                 CellPhone = "0953581040",
-                Email = "roberto123@hotmail.com"
+                Email = "basic_user@hotmail.com"
             }
         };
         await CreateSeedData();
@@ -75,6 +75,6 @@ public class GetPersons : TestBase
     private async Task CreateSeedData()
     {
         await AddRangeAsync(BaseSeeds.GetGenders());
-        await AddRangeAsync(PersonSeeds.GetPersons());
+        await AddRangeAsync(PersonSeeds.Get());
     }
 }
