@@ -7,6 +7,10 @@ public static class UserSeedData
     private const string DentistEmail    = "dentist@hotmail.com";
     private const string AdminEmail      = "admin@hotmail.com";
     private const string SuperAdminEmail = "superadmin@hotmail.com";
+    /// <summary>
+    /// Password Text: 123456
+    /// </summary>
+    /// <remarks>This password is for test purposes only.</remarks>
     private const string Password        = "$2a$10$60QnEiafBCLfVBMfQkExVeolyBxVHWcSQKTvkxVJj9FUozRpRP/GW";
 
     public static void CreateDefaultUserAccounts(this ModelBuilder builder)
