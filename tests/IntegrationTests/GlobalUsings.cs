@@ -17,6 +17,8 @@ global using DentallApp.Infrastructure.Persistence;
 global using DentallApp.Shared.Interfaces;
 global using DentallApp.Shared.Constants;
 global using DentallApp.Shared.Entities;
+global using DentallApp.Shared.Entities.WeekDays;
+global using DentallApp.Shared.Resources.Weekdays;
 global using DentallApp.Shared.Resources.ApiResponses;
 global using DentallApp.Shared.Resources.Genders;
 global using DentallApp.Shared.Resources.Kinships;
@@ -27,6 +29,7 @@ global using DentallApp.Core.Persons.UseCases;
 global using DentallApp.Core.Dependents.UseCases;
 global using DentallApp.Core.FavoriteDentists.UseCases;
 global using DentallApp.Core.PublicHolidays.UseCases;
+global using DentallApp.Core.EmployeeSchedules.UseCases;
 global using DentallApp.Core.Security.Users.UseCases;
 global using DentallApp.Core.Security.Employees.UseCases;
 
