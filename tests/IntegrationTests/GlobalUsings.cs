@@ -23,6 +23,7 @@ global using DentallApp.Shared.Models.Claims;
 
 global using DentallApp.Core.Persons.UseCases;
 global using DentallApp.Core.Dependents.UseCases;
+global using DentallApp.Core.FavoriteDentists.UseCases;
 global using DentallApp.Core.Security.Users.UseCases;
 
 global using IntegrationTests.Common;
