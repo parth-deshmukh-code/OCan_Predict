@@ -11,6 +11,7 @@ global using MySqlConnector;
 global using Respawn;
 
 global using DentallApp.Infrastructure;
+global using DentallApp.Infrastructure.Services;
 global using DentallApp.Infrastructure.Persistence;
 global using DentallApp.Shared.Interfaces;
 global using DentallApp.Shared.Constants;
@@ -22,6 +23,7 @@ global using DentallApp.Shared.Models.Claims;
 
 global using DentallApp.Core.Persons.UseCases;
 global using DentallApp.Core.Dependents.UseCases;
+global using DentallApp.Core.Security.Users.UseCases;
 
 global using IntegrationTests.Common;
 global using IntegrationTests.Common.Seeds;
