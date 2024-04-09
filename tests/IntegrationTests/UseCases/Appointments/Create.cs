@@ -6,7 +6,7 @@ public class CreateAppointment : TestBase
     public async Task Post_WhenAppointmentIsCreated_ShouldReturnsCreated()
     {
         // Arrange
-        int expectedId = 1;
+        int expectedId = 2;
         var client = CreateClientAsSecretary();
         var requestUri = $"{TestSettings.BaseUri}appointment";
         var request = new CreateAppointmentRequest
@@ -22,6 +22,19 @@ public class CreateAppointment : TestBase
         };
         Environment.SetEnvironmentVariable(TestSettings.CurrentDateTime, "2024-04-09 07:00");
         await CreateSeedData();
+        await AddAsync(new Appointment
+        {
+            UserId = 2,
+            PersonId = 2,
+            DentistId = 2,
+            GeneralTreatmentId = 1,
+            OfficeId = 1,
+            AppointmentStatusId = (int)AppointmentStatus.Predefined.Canceled,
+            Date = new DateTime(2024, 04, 09),
+            StartHour = new TimeSpan(10, 0, 0),
+            EndHour = new TimeSpan(11, 0, 0),
+            IsCancelledByEmployee = false
+        });
 
         // Act
         var httpResponse = await client.PostAsJsonAsync(requestUri, request);
