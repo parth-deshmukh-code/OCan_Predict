@@ -30,6 +30,7 @@ global using DentallApp.Core.Dependents.UseCases;
 global using DentallApp.Core.FavoriteDentists.UseCases;
 global using DentallApp.Core.PublicHolidays.UseCases;
 global using DentallApp.Core.EmployeeSchedules.UseCases;
+global using DentallApp.Core.Offices.UseCases;
 global using DentallApp.Core.Security.Users.UseCases;
 global using DentallApp.Core.Security.Employees.UseCases;
 
