@@ -2,7 +2,7 @@
 
 public class CreatePublicHoliday : TestBase
 {
-    [TestCaseSource(nameof(OfficesIdTest))]
+    [TestCaseSource(nameof(OfficesIdTestCases))]
     public async Task Post_WhenPublicHolidayIsCreated_ShouldReturnsCreated(List<int> officesId)
     {
         // Arrange
@@ -29,7 +29,7 @@ public class CreatePublicHoliday : TestBase
         result.Data.Id.Should().Be(expectedId);
     }
 
-    static IEnumerable<List<int>> OfficesIdTest()
+    static IEnumerable<List<int>> OfficesIdTestCases()
     {
         yield return [1, 2, 3];
         yield return [1, 2];
