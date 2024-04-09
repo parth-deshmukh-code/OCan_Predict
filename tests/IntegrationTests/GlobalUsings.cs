@@ -15,6 +15,7 @@ global using DentallApp.Infrastructure;
 global using DentallApp.Infrastructure.Services;
 global using DentallApp.Infrastructure.Persistence;
 global using DentallApp.Shared.Interfaces;
+global using DentallApp.Shared.Interfaces.Appointments;
 global using DentallApp.Shared.Constants;
 global using DentallApp.Shared.Entities;
 global using DentallApp.Shared.Entities.WeekDays;
