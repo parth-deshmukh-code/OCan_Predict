@@ -25,6 +25,7 @@ global using DentallApp.Shared.Resources.Genders;
 global using DentallApp.Shared.Resources.Kinships;
 global using DentallApp.Shared.Resources.Statuses;
 global using DentallApp.Shared.Models.Claims;
+global using DentallApp.Shared.Configuration;
 
 global using DentallApp.Core.Persons.UseCases;
 global using DentallApp.Core.Dependents.UseCases;
@@ -33,6 +34,7 @@ global using DentallApp.Core.PublicHolidays.UseCases;
 global using DentallApp.Core.EmployeeSchedules.UseCases;
 global using DentallApp.Core.Offices.UseCases;
 global using DentallApp.Core.OfficeSchedules.UseCases;
+global using DentallApp.Core.GeneralTreatments.UseCases;
 global using DentallApp.Core.SpecificTreatments.UseCases;
 global using DentallApp.Core.Security.Users.UseCases;
 global using DentallApp.Core.Security.Employees.UseCases;
