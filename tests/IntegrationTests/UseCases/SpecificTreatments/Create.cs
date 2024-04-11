@@ -3,7 +3,7 @@
 public class CreateSpecificTreatment : TestBase
 {
     [Test]
-    public async Task Post_WhenTreatmentIsCreated_ShouldReturnsCreated()
+    public async Task Post_WhenSpecificTreatmentIsCreated_ShouldReturnsCreated()
     {
         // Arrange
         int expectedId = 1;
