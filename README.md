@@ -130,9 +130,11 @@ Software engineering concepts have been applied in this project:
 
 **Additional references:**
 - [Software principles and design](https://deviq.com)
-- [Plugin Architecture Pattern in C#](https://code-maze.com/csharp-plugin-architecture-pattern)
-- [Plugin Architecture Design Pattern](https://www.devleader.ca/2023/09/07/plugin-architecture-design-pattern-a-beginners-guide-to-modularity)
-- [Vertical Slice Architecture in ASP.NET Core](https://code-maze.com/vertical-slice-architecture-aspnet-core)
+- [Plugin Architecture Pattern in C# by Alvaro Montoya](https://code-maze.com/csharp-plugin-architecture-pattern)
+- [Plugin Architecture Design Pattern by Nick Cosentino](https://www.devleader.ca/2023/09/07/plugin-architecture-design-pattern-a-beginners-guide-to-modularity)
+- [Plugin Architecture In C# For Improved Software Design by Nick Cosentino](https://www.devleader.ca/2024/03/12/plugin-architecture-in-c-for-improved-software-design)
+- [Vertical Slice Architecture in ASP.NET Core by Swapnil Meshram](https://www.linkedin.com/pulse/vertical-slice-architecture-aspnet-core-swapnil-meshram-sitsf)
+- [Vertical Slice Architecture in ASP.NET Core by Code Maze](https://code-maze.com/vertical-slice-architecture-aspnet-core)
 
 ## Installation
 

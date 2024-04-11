@@ -25,4 +25,12 @@
     <ProjectReference Include="..\..\src\HostApplication\DentallApp.HostApplication.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ContentWithTargetPath 
+      Include="UseCases\GeneralTreatments\teeth.png" 
+      CopyToOutputDirectory="PreserveNewest" 
+      TargetPath="DentalServices\teeth.png" 
+    />
+  </ItemGroup>
+
 </Project>

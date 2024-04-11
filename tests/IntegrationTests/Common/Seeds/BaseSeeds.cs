@@ -1,6 +1,6 @@
 ﻿namespace IntegrationTests.Common.Seeds;
 
-public static class BaseSeeds
+public class BaseSeeds
 {
     public static List<AppointmentStatus> GetAppointmentStatuses()
         =>

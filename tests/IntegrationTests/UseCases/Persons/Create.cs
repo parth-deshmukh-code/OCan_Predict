@@ -51,7 +51,7 @@ public class CreatePerson : TestBase
     }
 
     [Test]
-    public async Task Post_WhenUserIsNotAuthorized_ShouldReturnsUnauthorized()
+    public async Task Post_WhenUserIsNotAuthenticated_ShouldReturnsUnauthorized()
     {
         // Arrange
         var client = ApplicationFactory.CreateClient();
@@ -63,5 +63,20 @@ public class CreatePerson : TestBase
 
         // Assert
         httpResponse.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+    }
+
+    [Test]
+    public async Task Post_WhenClientIsNotSecretary_ShouldReturnsForbidden()
+    {
+        // Arrange
+        var client = CreateClientAsBasicUser();
+        var requestUri = $"{TestSettings.BaseUri}person";
+        var request = new CreatePersonRequest();
+
+        // Act
+        var httpResponse = await client.PostAsJsonAsync(requestUri, request);
+
+        // Assert
+        httpResponse.StatusCode.Should().Be(HttpStatusCode.Forbidden);
     }
 }

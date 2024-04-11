@@ -22,7 +22,7 @@ public class GetPersons : TestBase
                 LastNames = "Placencio Pinto",
                 FullName = "Roberto Emilio Placencio Pinto",
                 CellPhone = "0953581040",
-                Email = "roberto123@hotmail.com"
+                Email = "basic_user@hotmail.com"
             }
         };
         await CreateSeedData();
@@ -59,7 +59,7 @@ public class GetPersons : TestBase
     }
 
     [Test]
-    public async Task Get_WhenUserIsNotAuthorized_ShouldReturnsUnauthorized()
+    public async Task Get_WhenUserIsNotAuthenticated_ShouldReturnsUnauthorized()
     {
         // Arrange
         var client = ApplicationFactory.CreateClient();
@@ -72,9 +72,23 @@ public class GetPersons : TestBase
         httpResponse.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
     }
 
+    [Test]
+    public async Task Get_WhenClientIsNotSecretary_ShouldReturnsForbidden()
+    {
+        // Arrange
+        var client = CreateClientAsBasicUser();
+        var requestUri = $"{TestSettings.BaseUri}person/search?value=test";
+
+        // Act
+        var httpResponse = await client.GetAsync(requestUri);
+
+        // Assert
+        httpResponse.StatusCode.Should().Be(HttpStatusCode.Forbidden);
+    }
+
     private async Task CreateSeedData()
     {
         await AddRangeAsync(BaseSeeds.GetGenders());
-        await AddRangeAsync(PersonSeeds.GetPersons());
+        await AddRangeAsync(PersonSeeds.Get());
     }
 }
