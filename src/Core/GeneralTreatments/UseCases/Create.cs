@@ -5,6 +5,10 @@ public class CreateGeneralTreatmentRequest
     public string Name { get; init; }
     public string Description { get; init; }
     public IFormFile Image { get; init; }
+
+    /// <summary>
+    /// Expressed in minutes.
+    /// </summary>
     public int Duration { get; init; }
 
     public GeneralTreatment MapToGeneralTreatment() => new()
