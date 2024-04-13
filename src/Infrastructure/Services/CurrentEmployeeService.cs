@@ -62,7 +62,7 @@ public class CurrentEmployeeService(ClaimsPrincipal claimsPrincipal) : ICurrentE
                 .Where(roleId => roleId < (int)Role.Predefined.Secretary || roleId > (int)Role.Predefined.Admin)
                 .Any();
 
-        return false;
+        return true;
     }
 
     private IEnumerable<Claim> GetClaimsRoleType()
