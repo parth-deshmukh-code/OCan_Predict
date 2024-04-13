@@ -1,3 +1,4 @@
+global using System.Security.Claims;
 global using System.Collections;
 global using System.Text.Json;
 global using System.Text.Json.Serialization;
@@ -27,6 +28,8 @@ global using DentallApp.Shared.Resources.ApiResponses;
 global using DentallApp.Shared.Reasons;
 global using DentallApp.Shared.Configuration;
 global using DentallApp.Shared.ValidationRules;
+global using DentallApp.Shared.Constants;
+global using DentallApp.Shared.Exceptions;
 
 global using Plugin.ChatBot.Factories;
 global using Plugin.ChatBot.Models;
