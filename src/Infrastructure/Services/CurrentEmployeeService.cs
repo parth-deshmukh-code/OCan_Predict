@@ -52,14 +52,14 @@ public class CurrentEmployeeService(ClaimsPrincipal claimsPrincipal) : ICurrentE
 
     public bool HasNotPermissions(IEnumerable<int> rolesId)
     {
-        if (!IsSuperAdmin() && IsAdmin())
-            return rolesId
-                .Where(roleId => roleId < (int)Role.Predefined.Secretary || roleId > (int)Role.Predefined.Dentist)
-                .Any();
-
         if (IsSuperAdmin())
             return rolesId
                 .Where(roleId => roleId < (int)Role.Predefined.Secretary || roleId > (int)Role.Predefined.Admin)
+                .Any();
+
+        if (IsAdmin())
+            return rolesId
+                .Where(roleId => roleId < (int)Role.Predefined.Secretary || roleId > (int)Role.Predefined.Dentist)
                 .Any();
 
         return true;
