@@ -36,3 +36,5 @@ global using Plugin.ChatBot.Models;
 global using Plugin.ChatBot.DirectLine;
 global using Plugin.ChatBot.DirectLine.Services;
 global using Plugin.IdentityDocument.Ecuador;
+
+global using UnitTests.Infrastructure.TestCases;
