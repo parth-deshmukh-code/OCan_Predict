@@ -57,15 +57,16 @@ public class CreateUser : TestBase
         httpResponse.StatusCode.Should().Be(HttpStatusCode.BadRequest);
     }
 
-    [Test]
-    public async Task Post_WhenUserNameExists_ShouldReturnsConflict()
+    [TestCase("basic_user@hotmail.com")]
+    [TestCase("BASIC_USER@HOTMAIL.COM")]
+    public async Task Post_WhenUserNameExists_ShouldReturnsConflict(string userName)
     {
         // Arrange
         var client = ApplicationFactory.CreateClient();
         var requestUri = $"{TestSettings.BaseUri}user";
         var request = new CreateBasicUserRequest
         {
-            UserName = "basic_user@hotmail.com",
+            UserName = userName,
             Password = "Dsr2877565716",
             Document = "0923611701",
             Names = "David Sebastian",
