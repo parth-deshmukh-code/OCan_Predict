@@ -2,7 +2,13 @@
 
 public class EmployeeSeeds
 {
-    public static List<Employee> Get()
+    /// <summary>
+    /// Gets a list of employees.
+    /// </summary>
+    /// <param name="isDeleted">
+    /// Indicates whether all employees should be temporarily deleted.
+    /// </param>
+    public static List<Employee> Get(bool isDeleted = false)
         =>
         [
             new()
@@ -10,7 +16,8 @@ public class EmployeeSeeds
                 Id = 1,
                 UserId = 3,
                 PersonId = 3,
-                OfficeId = 1
+                OfficeId = 1,
+                IsDeleted = isDeleted
             },
             new()
             {
@@ -19,7 +26,8 @@ public class EmployeeSeeds
                 PersonId = 4,
                 OfficeId = 1,
                 PregradeUniversity = "UG",
-                PostgradeUniversity = "UG"
+                PostgradeUniversity = "UG",
+                IsDeleted = isDeleted
             },
             new()
             {
@@ -28,7 +36,8 @@ public class EmployeeSeeds
                 PersonId = 5,
                 OfficeId = 1,
                 PregradeUniversity = "UG",
-                PostgradeUniversity = "UG"
+                PostgradeUniversity = "UG",
+                IsDeleted = isDeleted
             },
             new()
             {
@@ -37,7 +46,8 @@ public class EmployeeSeeds
                 PersonId = 6,
                 OfficeId = 1,
                 PregradeUniversity = "UG",
-                PostgradeUniversity = "UG"
+                PostgradeUniversity = "UG",
+                IsDeleted = isDeleted
             }
         ];
 }
