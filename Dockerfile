@@ -22,30 +22,17 @@ COPY ["src/Plugins/SendGrid/*.csproj", "src/Plugins/SendGrid/"]
 COPY ["src/Plugins/TwilioWhatsApp/*.csproj", "src/Plugins/TwilioWhatsApp/"]
 COPY ["src/Plugins/IdentityDocumentEcuador/*.csproj", "src/Plugins/IdentityDocumentEcuador/"]
 COPY ["src/Plugins/*.props", "src/Plugins/"]
-WORKDIR /app/src/Plugins/AppointmentReminders
-RUN dotnet restore
-WORKDIR /app/src/Plugins/ChatBot
-RUN dotnet restore
-WORKDIR /app/src/Plugins/SendGrid
-RUN dotnet restore
-WORKDIR /app/src/Plugins/TwilioWhatsApp
-RUN dotnet restore
-WORKDIR /app/src/Plugins/IdentityDocumentEcuador
-RUN dotnet restore
+COPY ["src/Plugins/*.sh", "src/Plugins/"]
+WORKDIR /app/src/Plugins
+RUN chmod u+x restore-plugins.sh
+RUN ["./restore-plugins.sh"]
 
 # Copy everything else and build plugins
 COPY ["src/Shared/", "/app/src/Shared/"]
 COPY ["src/Plugins/", "/app/src/Plugins/"]
-WORKDIR /app/src/Plugins/AppointmentReminders
-RUN dotnet build -c Release --no-restore
-WORKDIR /app/src/Plugins/ChatBot
-RUN dotnet build -c Release --no-restore
-WORKDIR /app/src/Plugins/SendGrid
-RUN dotnet build -c Release --no-restore
-WORKDIR /app/src/Plugins/TwilioWhatsApp
-RUN dotnet build -c Release --no-restore
-WORKDIR /app/src/Plugins/IdentityDocumentEcuador
-RUN dotnet build -c Release --no-restore
+WORKDIR /app/src/Plugins
+RUN chmod u+x build-plugins.sh
+RUN ["./build-plugins.sh"]
 
 # Copy everything else and build app
 COPY ["src/", "/app/src/"]
