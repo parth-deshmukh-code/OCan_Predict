@@ -27,6 +27,7 @@ DentallApp is a web application with chatbot for appointment management, reminde
 - [Direct Line API](#direct-line-api)
 - [EF Core Migrations](#ef-core-migrations)
 - [Running tests](#running-tests)
+- [Contribution](#contribution)
 
 ## Important
 
@@ -392,3 +393,15 @@ dotnet test ./tests/IntegrationTests/DentallApp.IntegrationTests.csproj -c Relea
 ```
 
 > The database credentials you have in the ".env" file may not necessarily be the same as those in the ".env.test" file. For example, the ".env" file may have credentials from a remote AWS database and run the application on your local machine with that connection string.
+
+## Contribution
+
+Any contribution is welcome! Remember that you can contribute not only in the code, but also in the documentation or even improve the tests.
+
+Follow the steps below:
+
+- Fork it
+- Create your custom branch (git checkout -b my-new-change)
+- Commit your changes (git commit -am 'Add some change')
+- Push to the branch (git push origin my-new-change)
+- Create new Pull Request
