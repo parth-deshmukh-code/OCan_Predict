@@ -124,9 +124,7 @@ Software engineering concepts have been applied in this project:
 - [Open-closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
 - [Acyclic dependencies principle](https://en.wikipedia.org/wiki/Acyclic_dependencies_principle)
 - [Explicit dependencies](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles#explicit-dependencies)
-- [Dependency inversion](https://en.wikipedia.org/wiki/Dependency_inversion_principle)
 - [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
-- [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
 
 **Additional references:**
 - [Software principles and design](https://deviq.com)
