@@ -18,6 +18,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentallApp.UnitTests", "tests\UnitTests\DentallApp.UnitTests.csproj", "{BE6318A1-900B-4E8E-8AAE-C391F881C844}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{30EF533B-8888-4B94-BEF9-BC8DE05FC667}"
+	ProjectSection(SolutionItems) = preProject
+		src\Plugins\build-plugins.sh = src\Plugins\build-plugins.sh
+		src\Plugins\Directory.Build.props = src\Plugins\Directory.Build.props
+		src\Plugins\restore-plugins.sh = src\Plugins\restore-plugins.sh
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugin.AppointmentReminders", "src\Plugins\AppointmentReminders\Plugin.AppointmentReminders.csproj", "{EACB8B54-AAFE-4A46-A1D9-1FB23ADDA41C}"
 EndProject
@@ -38,7 +43,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Elements", "Soluti
 		tests\IntegrationTests\.env.test = tests\IntegrationTests\.env.test
 		tests\IntegrationTests\.env.test.example = tests\IntegrationTests\.env.test.example
 		Directory.Build.props = Directory.Build.props
-		src\Plugins\Directory.Build.props = src\Plugins\Directory.Build.props
 		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
