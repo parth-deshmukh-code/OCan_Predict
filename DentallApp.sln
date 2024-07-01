@@ -42,6 +42,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Elements", "Soluti
 		.env.example = .env.example
 		tests\IntegrationTests\.env.test = tests\IntegrationTests\.env.test
 		tests\IntegrationTests\.env.test.example = tests\IntegrationTests\.env.test.example
+		src\HostApplication\appsettings.json = src\HostApplication\appsettings.json
 		Directory.Build.props = Directory.Build.props
 		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
