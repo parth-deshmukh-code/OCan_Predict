@@ -7,7 +7,6 @@ public class AppSettings
 {
     public string BusinessName { get; set; } = string.Empty;
     public string DentalServicesImagesPath { get; set; } = string.Empty;
-    public string Language { get; set; } = string.Empty;
 
     public string AccessTokenKey { get; set; } = string.Empty;
     public double AccessTokenExpires { get; set; }

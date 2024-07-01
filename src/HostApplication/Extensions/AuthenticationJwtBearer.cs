@@ -2,7 +2,9 @@
 
 public static class AuthenticationJwtBearer
 {
-    public static IServiceCollection AddAuthenticationJwtBearer(this IServiceCollection services, AppSettings settings)
+    public static IServiceCollection AddAuthenticationJwtBearer(
+        this IServiceCollection services, 
+        AppSettings settings)
     {
         services.AddAuthentication(options =>
         {

@@ -5,7 +5,8 @@ public static class SwaggerGen
     public static IServiceCollection AddSwagger(this IServiceCollection services)
     {
         services.AddSwaggerGen(options =>
-        { 
+        {
+            options.OperationFilter<AcceptLanguageHeaderParameter>();
             options.EnableAnnotations();
             options.SwaggerDoc("v1", new OpenApiInfo { Title = "DentallApi", Version = "v1" });
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -27,7 +28,7 @@ public static class SwaggerGen
                             Id = "Bearer"
                         }
                     },
-                    new string[] { }
+                    Array.Empty<string>()
                 }
             });
             var coreAssemblyName = typeof(GetDependentsByCurrentUserIdUseCase).Assembly.GetName().Name;
@@ -43,5 +44,32 @@ public static class SwaggerGen
             }
         });
         return services;
+    }
+
+    private class AcceptLanguageHeaderParameter(IConfiguration configuration) : IOperationFilter
+    {
+        public void Apply(OpenApiOperation operation, OperationFilterContext context)
+        {
+            operation.Parameters ??= [];
+            var languageOptions = new List<IOpenApiAny>();
+            var languages = configuration.GetLanguages();
+            var defaultLanguage = configuration.GetDefaultLanguage();
+            foreach (var language in languages) 
+                languageOptions.Add(new OpenApiString(language));
+
+            operation.Parameters.Add(new OpenApiParameter
+            {
+                Name = "Accept-Language",
+                Description = "Language preference for the response.",
+                In = ParameterLocation.Header,
+                Required = false,
+                Schema = new OpenApiSchema
+                {
+                    Type = "string",
+                    Default = new OpenApiString(defaultLanguage),
+                    Enum = languageOptions
+                }
+            });
+        }
     }
 }
