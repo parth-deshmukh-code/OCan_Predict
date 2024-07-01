@@ -20,6 +20,7 @@ DentallApp is a web application with chatbot for appointment management, reminde
 - [Plugin configuration](#plugin-configuration)
 - [Credentials](#credentials)
 - [Validate identity documents](#validate-identity-documents)
+- [Configure languages](#configure-languages)
 - [Diagrams](#diagrams)
   - [General architecture](#general-architecture)
   - [Core layer](#core-layer)
@@ -178,7 +179,7 @@ By default only two plugins are loaded:
 - `Plugin.ChatBot.dll`
 - `Plugin.AppointmentReminders.dll`
 
-You can add other plugins by modifying the [PLUGINS](https://github.com/DentallApp/back-end/blob/d2dfdbd2a75b14be0ff87f531abc367040d87691/.env.example#L10-L13) key from the .env file:
+You can add other plugins by modifying the [PLUGINS](https://github.com/DentallApp/back-end/blob/52a0f58f8a721d731b0c21da75bb648eedb40d33/.env.example#L9-L12) key from the .env file:
 ```.env
 PLUGINS="
 Plugin.ChatBot.dll
@@ -228,6 +229,17 @@ Plugin.IdentityDocument.Ecuador.dll
 In case there is no plugin loaded to validate the identity document, the host application will use a fake provider called [FakeIdentityDocument](https://github.com/DentallApp/back-end/blob/dev/src/Infrastructure/Services/FakeIdentityDocument.cs).
 
 It was decided to implement the logic to validate identity documents from a plugin, because it is flexible, since it allows to change the implementation without having to modify the source code of the host application.
+
+## Configure languages
+
+This project uses [resource files](https://github.com/DentallApp/back-end/tree/dev/src/Shared/Resources) to store response messages in different languages. If you want to add a new language, you must modify the [Languages section](https://github.com/DentallApp/back-end/blob/52a0f58f8a721d731b0c21da75bb648eedb40d33/src/HostApplication/appsettings.json#L7-L10) of `appsettings.json`.
+```json
+"Languages": [
+  "es",
+  "en",
+  "fr"
+]
+```
 
 ## Diagrams
 
