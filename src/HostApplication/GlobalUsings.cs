@@ -16,11 +16,13 @@ global using DentallApp.Shared.Resources.ApiResponses;
 global using DentallApp.Shared.Configuration;
 
 global using System.Reflection;
+global using System.Globalization;
 global using System.Net;
 global using System.Text;
 global using System.Text.Encodings.Web;
 global using System.Text.Json.Serialization;
 
+global using Microsoft.AspNetCore.Localization;
 global using Microsoft.AspNetCore.Mvc.ApplicationParts;
 global using Microsoft.AspNetCore.Authentication;
 global using Microsoft.AspNetCore.Authentication.JwtBearer;
