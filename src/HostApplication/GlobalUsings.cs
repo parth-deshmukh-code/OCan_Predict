@@ -33,6 +33,8 @@ global using Microsoft.IdentityModel.Logging;
 global using Microsoft.Extensions.Options;
 global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using Microsoft.OpenApi.Models;
+global using Microsoft.OpenApi.Any;
+global using Swashbuckle.AspNetCore.SwaggerGen;
 global using EntityFramework.Exceptions.Common;
 
 global using DotEnv.Core;
