@@ -29,8 +29,15 @@ public static class AuthenticationJwtBearer
         return services;
     }
 
-    private static AuthenticationBuilder AddCustomJwtBearer(this AuthenticationBuilder builder, Action<JwtBearerOptions> configureOptions)
-        => builder.AddScheme<JwtBearerOptions, CustomJwtBearerHandler>(JwtBearerDefaults.AuthenticationScheme, displayName: null, configureOptions);
+    private static AuthenticationBuilder AddCustomJwtBearer(
+        this AuthenticationBuilder builder, 
+        Action<JwtBearerOptions> configureOptions)
+    {
+        return builder.AddScheme<JwtBearerOptions, CustomJwtBearerHandler>(
+            JwtBearerDefaults.AuthenticationScheme, 
+            displayName: null, 
+            configureOptions);
+    }
 
     /// <inheritdoc />
     /// <remarks>
@@ -45,8 +52,10 @@ public static class AuthenticationJwtBearer
         /// </summary>
         private const string BotPath = "/messages";
 
-        public CustomJwtBearerHandler(IOptionsMonitor<JwtBearerOptions> options, ILoggerFactory logger, UrlEncoder encoder)
-            : base(options, logger, encoder) { }
+        public CustomJwtBearerHandler(
+            IOptionsMonitor<JwtBearerOptions> options, 
+            ILoggerFactory logger, 
+            UrlEncoder encoder) : base(options, logger, encoder) { }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
             => Context.Request.Path.StartsWithSegments(BotPath) ? 
