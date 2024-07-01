@@ -25,6 +25,7 @@ builder.Services
 builder.Services.AddSwagger();
 builder.Services.AddAuthenticationJwtBearer(appSettings);
 builder.Services.AddValidators();
+builder.Services.ConfigureLanguages(builder.Configuration);
 
 builder.Services
     .AddExceptionHandler<ReferenceConstraintExceptionHandler>()
@@ -44,8 +45,7 @@ else
     app.UseExceptionHandler("/");
 }
 
-app.UseRequestLocalization(appSettings.Language);
-
+app.UseRequestLocalization();
 app.UseWebSockets()
    .UsePathBase(new PathString("/api"))
    .UseRouting()
