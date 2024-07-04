@@ -40,7 +40,7 @@ In the end, this project was never deployed in that dental office for personal r
 
 I have continued to maintain this project because I have been experimenting with plugin-based architecture and I love it.
 
-I have not found any .NET project that has applied this architecture and I don't mean a sample project, but one that solves a problem. For that reason I decided to apply it in this project, I'm sure many will find it useful as knowledge.
+I have not found any .NET project that has applied this architectural pattern and I don't mean a sample project, but one that solves a problem. For that reason I decided to apply it in this project, I'm sure many will find it useful as knowledge.
 
 Another of my reasons is that what I learn about software engineering, I like to share with the community. That's why I have been inspired to improve it.
 
@@ -160,7 +160,7 @@ echo -e '\nTZ=America/Guayaquil' >> .env
 ```
 - Build the image and initiate services.
 ```sh
-docker-compose up --build -d
+docker compose up --build -d
 ```
 - Access the application with this URL.
 ```
