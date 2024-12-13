@@ -444,8 +444,6 @@ In our project, this free cloud-based solution allowed us to train our YOLO-base
 - **Efficient Deployment**: The use of the **Intel® Neural Compressor** made it possible to deploy a highly optimized model on Intel hardware, ensuring fast and accurate predictions.
 - **Scalability**: This approach allows for deployment both in edge devices and cloud environments, providing scalability for real-time image classification in medical diagnostics.
 
-### Work flow of the system
-
 ## Contribution
 
 Any contribution is welcome! Remember that you can contribute not only in the code, but also in the documentation or even improve the tests.
