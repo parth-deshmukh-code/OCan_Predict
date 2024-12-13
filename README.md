@@ -432,22 +432,19 @@ The **pyrealsense2** library is a Python wrapper for the Intel RealSense SDK, en
 #### Benefits of pyrealsense2 for the Project:
 - **Real-Time Depth and Color Sensing**: With **pyrealsense2**, users can access real-time data streams from the RealSense camera, including depth and color frames. This capability is particularly useful in applications that require precise spatial information.
 - **High Precision and Accuracy**: RealSense cameras provide high accuracy in depth sensing, which can enrich sensor data for more detailed analysis or aid in complex tasks like 3D mapping, object detection, and environment scanning.
-- **Easy Integration in Jupyter Notebooks**: pyrealsense2 works seamlessly within interactive Python environments, such as Jupyter Notebooks. This makes it an ideal tool for rapid prototyping and testing, enabling the user to process camera data alongside machine learning workflows in real-time.
-
-
-### Jupyter Notebook Environment on Intel Tiber Cloud
-
-One of the key benefits of Intel's **Tiber Cloud** is its free access to cloud-based **Jupyter Notebook** environments, which we used extensively for this project.
-
-These notebooks allow for an interactive coding experience, where you can write, execute, and visualize results step-by-step without needing to set up any complex infrastructure. The notebooks provided on Tiber Cloud come pre-configured with the required libraries and optimized access to Intel hardware accelerators such as CPUs, GPUs, and VPUs, enabling streamlined machine learning and AI development.
-
-#### Benefits for the Project:
-- **No Setup Required**: The environment is ready to use out of the box, reducing setup time.
-- **Access to Intel Hardware Accelerators**: The free notebooks come with access to Intel’s powerful CPUs, GPUs, and VPUs for accelerated model training and deployment.
-- **Real-Time Testing**: After training and optimizing your model, the same notebook environment can be used for testing and running inference on the model, reducing the complexity of switching between different platforms.
 
 In our project, this free cloud-based solution allowed us to train our YOLO-based model, and optimize the model for real-time inferencing—all within a single, seamless environment.
 
+### Intel Platform Deployment with Hugging Face for OSMF Classification
+**Training the Model**: The model was trained using standard deep learning libraries and datasets relevant to OSMF image classification.
+**Optimizing the Model**: 
+   - The **Intel® Neural Compressor** was used to apply quantization techniques to optimize the model for deployment.
+   - The goal was to improve performance while minimizing the resource usage on Intel hardware.
+### Benefits:
+- **Efficient Deployment**: The use of the **Intel® Neural Compressor** made it possible to deploy a highly optimized model on Intel hardware, ensuring fast and accurate predictions.
+- **Scalability**: This approach allows for deployment both in edge devices and cloud environments, providing scalability for real-time image classification in medical diagnostics.
+
+### Work flow of the system
 
 ## Contribution
 
