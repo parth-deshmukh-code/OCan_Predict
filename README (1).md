@@ -13,7 +13,7 @@ making cutting-edge technology accessible to end users.
 ## Index
 
 - [Motivation](#motivations)
-- [Rational Behind] (#rational behind)
+- [Rational Behind](#Rational-behind)
 - [Technologies used](#technologies-used)
 - [Intel Hardware and Software Utilized](Intel-Hardware-and-Software-Utilized)
   - [Softwares Links](#softwareslinks)
