@@ -28,6 +28,7 @@ DentallApp is a web application with chatbot for appointment management, reminde
 - [Direct Line API](#direct-line-api)
 - [EF Core Migrations](#ef-core-migrations)
 - [Running tests](#running-tests)
+- [Intel Hardware and Software Utilized](Intel-Hardware-and-Software-Utilized)
 - [Contribution](#contribution)
 
 ## Important
@@ -405,6 +406,48 @@ dotnet test ./tests/IntegrationTests/DentallApp.IntegrationTests.csproj -c Relea
 ```
 
 > The database credentials you have in the ".env" file may not necessarily be the same as those in the ".env.test" file. For example, the ".env" file may have credentials from a remote AWS database and run the application on your local machine with that connection string.
+
+## Intel Hardware and Software Utilized
+
+This project leverages cutting-edge Intel hardware and software platforms to develop and deploy a robust machine learning solution.
+
+**Intel RealSense Depth Camera D405**
+
+The Intel RealSense Depth Camera D405 is an advanced depth-sensing camera specifically designed for capturing high-precision depth information at close ranges. Its features and specifications make it particularly valuable for projects requiring fine-grained 3D imaging and detailed object measurements.
+
+**Key features of the D405 include:**
+
+Close-range focus: Unlike other RealSense cameras optimized for longer distances, the D405 is specifically tuned for close-range scenarios, with a minimum object distance of 7 cm to maximum of 50cm .
+
+High precision: Enables accurate depth measurement, crucial for applications that demand detailed surface analysis or dimensional accuracy.
+
+This camera is ideal for applications in **health care, robotics, industrial applications** 
+
+In this project, the Intel RealSense Depth Camera D405 was utilized to calculate the *interincisal distance (mouth opening)*. By capturing detailed depth data of the oral region, the camera ensured precise measurements critical for the project's success.
+
+### pyrealsense2 Library for RealSense Camera Integration
+
+The **pyrealsense2** library is a Python wrapper for the Intel RealSense SDK, enabling easy integration of RealSense cameras into Python projects. The library facilitates the capture and processing of high-definition video, depth, and infrared data from Intel RealSense devices. By using this library, you can interface with the camera to retrieve real-time data, such as 3D depth information, which can be essential for a variety of applications like object detection, spatial analysis, and robotics.
+
+#### Benefits of pyrealsense2 for the Project:
+- **Real-Time Depth and Color Sensing**: With **pyrealsense2**, users can access real-time data streams from the RealSense camera, including depth and color frames. This capability is particularly useful in applications that require precise spatial information.
+- **High Precision and Accuracy**: RealSense cameras provide high accuracy in depth sensing, which can enrich sensor data for more detailed analysis or aid in complex tasks like 3D mapping, object detection, and environment scanning.
+- **Easy Integration in Jupyter Notebooks**: pyrealsense2 works seamlessly within interactive Python environments, such as Jupyter Notebooks. This makes it an ideal tool for rapid prototyping and testing, enabling the user to process camera data alongside machine learning workflows in real-time.
+
+
+### Jupyter Notebook Environment on Intel Tiber Cloud
+
+One of the key benefits of Intel's **Tiber Cloud** is its free access to cloud-based **Jupyter Notebook** environments, which we used extensively for this project.
+
+These notebooks allow for an interactive coding experience, where you can write, execute, and visualize results step-by-step without needing to set up any complex infrastructure. The notebooks provided on Tiber Cloud come pre-configured with the required libraries and optimized access to Intel hardware accelerators such as CPUs, GPUs, and VPUs, enabling streamlined machine learning and AI development.
+
+#### Benefits for the Project:
+- **No Setup Required**: The environment is ready to use out of the box, reducing setup time.
+- **Access to Intel Hardware Accelerators**: The free notebooks come with access to Intel’s powerful CPUs, GPUs, and VPUs for accelerated model training and deployment.
+- **Real-Time Testing**: After training and optimizing your model, the same notebook environment can be used for testing and running inference on the model, reducing the complexity of switching between different platforms.
+
+In our project, this free cloud-based solution allowed us to train our YOLO-based model, and optimize the model for real-time inferencing—all within a single, seamless environment.
+
 
 ## Contribution
 
