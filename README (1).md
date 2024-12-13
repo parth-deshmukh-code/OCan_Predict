@@ -85,9 +85,6 @@ users can access real-time data streams from the RealSense camera, including dep
   ### AI Model on Intel Hugging Face for OSMF Classification
 **Training the Model**: The model was trained using standard deep learning libraries and datasets relevant to OSMF image classification.
 In our project, this free cloud-based solution allowed us to train our YOLO-based model, and optimize the model for real-time inferencing—all within a single, seamless environment.
-
-**Optimizing the Model**: 
-   - The **Intel® Neural Compressor** was used to apply quantization techniques to optimize the model for deployment.
    
   ### Benefits:
 - **Efficient Model Deployment**: Intel® Hugging Faces ** made it possible to deploy a highly optimized model on Intel resources, ensuring fast and accurate predictions.
