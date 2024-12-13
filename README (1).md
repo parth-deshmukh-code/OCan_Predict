@@ -1,5 +1,5 @@
 # back-end
-This project was developemnt under BIRAC Amrit Grand Challenege JanCare in G H Raisoni College of Engineering,Nagpur in 2023-24
+This project was developed under BIRAC Amrit Grand Challenege JanCare in G H Raisoni College of Engineering,Nagpur in 2023-24
 
 OcanPredict is an AI-powered web application designed for the early screening of Oral Submucous Fibrosis (OSMF).
 It leverages advanced machine learning models deployed on the Intel platform using Hugging Face's framework to provide accurate predictions.
