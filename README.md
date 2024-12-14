@@ -464,6 +464,3 @@ dotnet test ./tests/IntegrationTests/DentallApp.IntegrationTests.csproj -c Relea
 - Ms.Sakshi Dhore,VI Sem ETRX Student
 
 
-
-Any contribution is welcome! Remember that you can contribute not only in the code, but also in the documentation or even improve the tests.
-
