@@ -456,12 +456,12 @@ dotnet test ./tests/IntegrationTests/DentallApp.IntegrationTests.csproj -c Relea
 ## Contribution
 
 Dr.Vibha Bora,Principal Investigator
-Mr.Chaitanya Wankhede,Junior Research Fellow
-Mr.Bhanu Nagpure, VIII Sem CSE Student
-Mr.Parth Deshmukh,VI Sem ETRX Student
-Mr.Piyush Choudhari,VI Sem ETRX Student
-Mr.Ashwin Khapre,VI Sem ETRX Student
-Ms.Sakshi Dhore,VI Sem ETRX Student
+-Mr.Chaitanya Wankhede,Junior Research Fellow
+-Mr.Bhanu Nagpure, VIII Sem CSE Student
+-Mr.Parth Deshmukh,VI Sem ETRX Student
+-Mr.Piyush Choudhari,VI Sem ETRX Student
+-Mr.Ashwin Khapre,VI Sem ETRX Student
+-Ms.Sakshi Dhore,VI Sem ETRX Student
 
 
 
