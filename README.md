@@ -453,8 +453,6 @@ dotnet test ./tests/IntegrationTests/DentallApp.IntegrationTests.csproj -c Relea
 
 > The database credentials you have in the ".env" file may not necessarily be the same as those in the ".env.test" file. For example, the ".env" file may have credentials from a remote AWS database and run the application on your local machine with that connection string.
 
-### Work flow of the system
-
 ## Contribution
 
 Dr.Vibha Bora,Principal Investigator
