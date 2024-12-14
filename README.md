@@ -1,8 +1,8 @@
 # back-end
-This project was developemnt under BIRAC Amrit Grand Challenege JanCare in G H Raisoni College of Engineering,Nagpur in 2023-24
+This project was developed under BIRAC Amrit Grand Challenege JanCare in G H Raisoni College of Engineering,Nagpur in 2023-24
 
 OcanPredict is an AI-powered web application designed for the early screening of Oral Submucous Fibrosis (OSMF).
-It leverages advanced machine learning models deployed on the Intel platform using Hugging Face's framework to provide accurate predictions.
+It leverages advance machine learning models deployed on the Intel platform using Hugging Face's framework to provide accurate predictions.
 The application offers a user-friendly interface for seamless interaction with the AI model, 
 making cutting-edge technology accessible to end users.
 
@@ -13,7 +13,7 @@ making cutting-edge technology accessible to end users.
 ## Index
 
 - [Motivation](#motivations)
-- [Rational Behind] (#rational behind)
+- [Rationale Behind](#rationale-behind)
 - [Technologies used](#technologies-used)
 - [Intel Hardware and Software Utilized](Intel-Hardware-and-Software-Utilized)
   - [Softwares Links](#softwareslinks)
@@ -55,7 +55,7 @@ considered the standard examination method for analyzing tissue cells, poses the
 the condition. Due to these limitations, doctors often adopt a conservative approach to proceed with 
 the diagnosis.
 
-## Rational Behind
+## Rationale Behind
 Artificial Intelligence offers a promising alternative by enabling early and non-invasive detection 
 of OSMF, improving patient outcomes while minimizing discomfort and risks associated with traditional 
 methods. 
