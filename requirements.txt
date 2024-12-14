@@ -1,8 +1,0 @@
-flask
-ultralytics
-numpy
-opencv-python
-Pillow
-python-multipart
-python-dotenv
-gunicorn
