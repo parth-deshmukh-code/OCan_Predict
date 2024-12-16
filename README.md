@@ -1,4 +1,4 @@
-# README
+# Motivations
 This project was developed under BIRAC Amrit Grand Challenege JanCare in G H Raisoni College of Engineering,Nagpur in 2023-24
 
 OcanPredict is an AI-powered web application designed for the early screening of Oral Submucous Fibrosis (OSMF).
@@ -12,29 +12,18 @@ making cutting-edge technology accessible to end users.
 
 ## Index
 
-- [Motivation](#motivations)
+- [Motivations](#motivations)
 - [Rationale Behind](#rationale-behind)
 - [Technologies used](#technologies-used)
 - [Intel Hardware and Software Utilized](Intel-Hardware-and-Software-Utilized)
-  - [Softwares Links](#softwareslinks)
+  - [Softwares Links](#Softwares-Links)
   - [Frameworks and libraries](#frameworks-and-libraries)
-  - [Testing](#testing)
+  - [Procedure/ Steps](#Procedure/-Steps)
   - [Own libraries](#own-libraries)
-- [Software Engineering](#software-engineering)
-- [Installation](#installation)
-- [Plugin configuration](#plugin-configuration)
-- [Credentials](#credentials)
-- [Validate identity documents](#validate-identity-documents)
-- [Configure languages](#configure-languages)
 - [Diagrams](#diagrams)
-  - [General architecture](#general-architecture)
-  - [Core layer](#core-layer)
-  - [Relational model](#relational-model)
-- [Direct Line API](#direct-line-api)
-- [EF Core Migrations](#ef-core-migrations)
-- [Running tests](#running-tests)
-
-- [Contribution](#contribution)
+  - [Mouth opining using intel real sense camera](#Mouth-opining-using-intel-real-sense-camera)
+  - [OAMF lesion classification](OAMF-lesion-classification)
+- [Contributors](#Contributors)
 
 ## Motivation
 
@@ -135,6 +124,7 @@ In our project, this free cloud-based solution allowed us to train our YOLO-base
 - [BCrypt.Net-Next](https://github.com/BcryptNet/bcrypt.net)
 - [Scriban](https://github.com/scriban/scriban)
 - [itext7.pdfhtml](https://github.com/itext/i7n-pdfhtml)
+- [ultralytics.yolov8](https://github.com/ultralytics/ultralytics/blob/main/docs/en/models/yolov8.md)
 - [File.TypeChecker](https://github.com/AJMitev/FileTypeChecker)
 - [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 - [FluentValidation.DependencyInjectionExtensions](https://www.nuget.org/packages/FluentValidation.DependencyInjectionExtensions)
@@ -148,23 +138,6 @@ In our project, this free cloud-based solution allowed us to train our YOLO-base
 - [CopySqlFilesToOutputDirectory](https://www.nuget.org/packages/CopySqlFilesToOutputDirectory)
 - [CopyPluginsToPublishDirectory](https://www.nuget.org/packages/CopyPluginsToPublishDirectory)
 
-## Software Engineering
-
-Software engineering concepts have been applied in this project:
-- [Vertical Slice Architecture](https://garywoodfine.com/implementing-vertical-slice-architecture)
-- [CQRS](https://en.wikipedia.org/wiki/Command_Query_Responsibility_Segregation)
-- [Plugin-based architecture](https://www.linkedin.com/pulse/plugin-architecture-design-pattern-beginners-guide-nick-cosentino)
-- [Interface-based programming](https://en.wikipedia.org/wiki/Interface-based_programming)
-- [Modular programming](https://en.wikipedia.org/wiki/Modular_programming)
-- [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)
-- [Operation Result Pattern](https://medium.com/@wgyxxbf/result-pattern-a01729f42f8c)
-- [Guard Clause](https://deviq.com/design-patterns/guard-clause)
-- [Fail Fast](https://deviq.com/principles/fail-fast)
-- [Open-closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
-- [Acyclic dependencies principle](https://en.wikipedia.org/wiki/Acyclic_dependencies_principle)
-- [Explicit dependencies](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles#explicit-dependencies)
-- [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
-
 **Additional references:**
 - [Software principles and design](https://deviq.com)
 - [Plugin Architecture Pattern in C# by Alvaro Montoya](https://code-maze.com/csharp-plugin-architecture-pattern)
@@ -172,56 +145,6 @@ Software engineering concepts have been applied in this project:
 - [Plugin Architecture In C# For Improved Software Design by Nick Cosentino](https://www.devleader.ca/2024/03/12/plugin-architecture-in-c-for-improved-software-design)
 - [Vertical Slice Architecture in ASP.NET Core by Swapnil Meshram](https://www.linkedin.com/pulse/vertical-slice-architecture-aspnet-core-swapnil-meshram-sitsf)
 - [Vertical Slice Architecture in ASP.NET Core by Code Maze](https://code-maze.com/vertical-slice-architecture-aspnet-core)
-
-
-## Credentials
-
-The following table shows the default credentials for authentication from the application.
-
-| Username                | Password                    |
-|-------------------------|-----------------------------|
-| basic_user@hotmail.com  | 123456                      |
-| secretary@hotmail.com   | 123456                      |
-| dentist@hotmail.com     | 123456                      |
-| admin@hotmail.com       | 123456                      |
-| superadmin@hotmail.com  | 123456                      |
-
-Use this route for authentication:
-```
-POST - /api/user/login
-```
-Request body:
-```json
-{
-  "userName": "basic_user@hotmail.com",
-  "password": "123456"
-}
-```
-
-## Validate identity documents
-
-To validate identity documents, it depends largely on the country where the dental office is located. At the moment, we can only validate identity documents registered in Ecuador.
-
-You can enable it from the configuration file, e.g.
-```.env
-PLUGINS="
-Plugin.IdentityDocument.Ecuador.dll
-"
-```
-In case there is no plugin loaded to validate the identity document, the host application will use a fake provider called [FakeIdentityDocument](https://github.com/DentallApp/back-end/blob/dev/src/Infrastructure/Services/FakeIdentityDocument.cs).
-
-It was decided to implement the logic to validate identity documents from a plugin, because it is flexible, since it allows to change the implementation without having to modify the source code of the host application.
-
-## Configure languages
-
-This project uses [resource files](https://github.com/DentallApp/back-end/tree/dev/src/Shared/Resources) to store response messages in different languages. If you want to add a new language, you must modify the [Languages section](https://github.com/DentallApp/back-end/blob/52a0f58f8a721d731b0c21da75bb648eedb40d33/src/HostApplication/appsettings.json#L7-L10) of `appsettings.json`.
-```json
-"Languages": [
-  "es",
-  "en",
-  "fr"
-]
-```
 
 ## Diagrams
 
@@ -236,88 +159,35 @@ This project uses [resource files](https://github.com/DentallApp/back-end/tree/d
 <details>
 <summary><b>Show diagram</b></summary>
 
-![OAMF L=lesion classification](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/OSMF%20lesion%20classification.png)
+![OAMF lesion classification](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/OSMF%20lesion%20classification.png)
 
 </details>
 
+## Procedure/ Steps
 
-## Direct Line API
+### OSMF Mouth Opening Staging Using Intel RealSense Camera
+- Start the Intel RealSense D405 Depth Camera.
+- Ask the patient to seat in fron of camera 
+- Capture snapshot and depth data.
+- Detect upper and lower lip landmarks.
+- Identify Region of Interest (ROI), apply histogram equalization, and thresholding.
+- Calculate vertical distances in ROI and find the median vertical distance in pixels.
+- Convert distance to real-world units using a calibration factor.
+- Determine OSMF stages based on mouth opening distance.
 
-[Direct Line API](https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-api-reference) allows your client application to communicate with the bot. It acts as a bridge between the client and the bot.
+### OSMF Lesion Classification Using Deep Learning and Intel Hugging Face 
+- Collect OSMF image database.
+- Annotate images using Roboflow.
+- Apply data augmentation.
+- Train the YOLOv8 deep learning model.
+- Deploy the trained model on Intel Hugging Face.
+- Test images using an intra-oral camera.
+- Perform OSMF classification:
+  - OSMF Detected (if lesions are found).
+  - No OSMF (if lesions are not found).
 
-For development and test environments you can use [InDirectLine](https://github.com/newbienewbie/InDirectLine) to avoid having to use Azure. [InDirectLine](https://github.com/newbienewbie/InDirectLine) is a bridge that implements the Direct Line API, but should not be used for production.
 
-By default, the configuration file (.env) contains a key called `DIRECT_LINE_BASE_URL`.
-```.env
-DIRECT_LINE_BASE_URL=http://indirectline:3000/
-```
-The provider called [InDirectLine](https://github.com/newbienewbie/InDirectLine) is used by default.
-
-In production, the value of this key must be changed to:
-```.env
-DIRECT_LINE_BASE_URL=https://directline.botframework.com/
-```
-In that case the provider to use will be the Direct Line channel of Azure Bot. The backend application is able to switch providers just by reading the URL.
-
-## EF Core Migrations
-
-You can use EF Core migrations to create the database from the entities.
-
-- You must install [dotnet ef](https://learn.microsoft.com/en-us/ef/core/cli/dotnet#installing-the-tools) as a global tool using the following command:
-```sh
-dotnet tool install --global dotnet-ef
-```
-
-- Change directory.
-```sh
-cd src/HostApplication
-```
-
-- Run this command to create the migration files.
-```sh
-dotnet ef migrations add InitialCreate
-```
-
-- At this point you can have EF create your database and create your schema from the migration.
-```sh
-dotnet ef database update
-```
-
-> That's all there is to it - your application is ready to run on your new database, and you didn't need to write a single line of SQL. Note that this way of applying migrations is ideal for local development, but is less suitable for production environments - see the [Applying Migrations](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying) page for more info.
-
-## Running tests
-
-To run the unit tests on your local machine, run this command:
-```sh
-dotnet test ./tests/UnitTests/DentallApp.UnitTests.csproj -c Release
-```
-
-You can also run the chatbot tests on their local machine:
-```sh
-dotnet test ./tests/ChatBot/Plugin.ChatBot.IntegrationTests.csproj -c Release
-```
-
-You can run the integration tests that depend on a database but first you need to follow the following steps:
-- Install [MariaDb Server](https://mariadb.com/downloads) and set up your username and password.
-- Create a file called `.env` in the root directory with the command:
-```sh
-cp .env.example .env
-# On Windows use the "xcopy" command.
-```
-- Create a file called `.env.test` in the test directory with the command:
-```sh
-cp ./tests/IntegrationTests/.env.test.example ./tests/IntegrationTests/.env.test
-# On Windows use the "xcopy" command.
-```
-- Specify your database credentials in the `.env.test` file.
-- Execute the dotnet test command to run the tests.
-```sh
-dotnet test ./tests/IntegrationTests/DentallApp.IntegrationTests.csproj -c Release
-```
-
-> The database credentials you have in the ".env" file may not necessarily be the same as those in the ".env.test" file. For example, the ".env" file may have credentials from a remote AWS database and run the application on your local machine with that connection string.
-
-## Contribution
+## Contributors 
 
 - Dr.Vibha Bora,Principal Investigator
 - Mr.Chaitanya Wankhede,Junior Research Fellow
