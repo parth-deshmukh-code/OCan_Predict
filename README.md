@@ -308,9 +308,17 @@ In the presented diagram it can be identified that the feature modules are not c
 <details>
 <summary><b>Show diagram</b></summary>
 
-![relational-model](https://github.com/DentallApp/back-end/blob/dev/diagrams/relational-model.png)
+![relational-model]([https://github.com/DentallApp/back-end/blob/dev/diagrams/relational-model.png](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/Mouth%20opening%20uing%20Intel%20REALSENSE%20camera.png))
 
 </details>
+
+<details>
+<summary><b>Show diagram</b></summary>
+
+![relational-model]([https://github.com/DentallApp/back-end/blob/dev/diagrams/relational-model.png](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/Mouth%20opening%20uing%20Intel%20REALSENSE%20camera.png))
+
+</details>
+
 
 ## Direct Line API
 
