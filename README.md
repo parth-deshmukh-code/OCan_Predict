@@ -1,4 +1,4 @@
-# 
+# README
 This project was developed under BIRAC Amrit Grand Challenege JanCare in G H Raisoni College of Engineering,Nagpur in 2023-24
 
 OcanPredict is an AI-powered web application designed for the early screening of Oral Submucous Fibrosis (OSMF).
@@ -82,7 +82,7 @@ The **pyrealsense2** library is a Python wrapper for the Intel RealSense SDK, en
 users can access real-time data streams from the RealSense camera, including depth and color frames. This capability is particularly useful in applications that require precise spatial information.
 
 
-  ### AI Model on Intel Hugging Face for OSMF Classification 
+  ### AI Model on Intel Hugging Face for OSMF Classification on APP
 **Training the Model**: The model was trained using standard deep learning libraries and datasets relevant to OSMF image classification.
 In our project, this free cloud-based solution allowed us to train our YOLO-based model, and optimize the model for real-time inferencing—all within a single, seamless environment.
 
