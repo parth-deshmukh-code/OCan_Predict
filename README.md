@@ -230,94 +230,13 @@ This project uses [resource files](https://github.com/DentallApp/back-end/tree/d
 <details>
 <summary><b>Show diagram</b></summary>
 
-![general-architecture](https://github.com/DentallApp/back-end/blob/dev/diagrams/general-architecture.png)
+![Mouth opining using intel real sense camera](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/Mouth%20opening%20uing%20Intel%20REALSENSE%20camera.png)
 
 </details>
 
 <details>
 <summary><b>More details</b></summary>
 <br/>
-
-**Overview of each component:**
-- **Host Application.** Contains everything needed to run the application. It represents the entry point of the application.
-  This layer performs other tasks such as:
-  - Load plugins from a configuration file (.env) using the library called [CPlugin.Net](https://github.com/MrDave1999/CPlugin.Net).
-  - Finds the types that implement the interfaces shared between the host application and the plugins to create instances of those types.
-  - Add services to the service collection, register middleware, load SQL files, load the .env file, among other things.
-- **Shared Layer.** It contains common classes and interfaces between many components. This layer has [aspects](https://en.wikipedia.org/wiki/Aspect_(computer_programming)) (additional parts) that are not related to the main processes of the application.
-  - This layer contains the interfaces that allow communication between the host application and the plugins.
-  - This layer does not contain the implementation of a functional requirement.
-  - It contains other things such as:
-    - Extension classes
-    - Exception classes
-    - Classes mapped to the database schema (entities)
-    - Data models
-    - Value objects
-    - Objects that represent error and success messages
-    - Constants
-    - Settings objects
-    - Language resources 
-    - Common validation rules
-    - Repository and service interfaces
-- **Core Layer.** Contains the main processes (essential features) of the application.
-  - Each feature represents a functional requirement of what the app should do. 
-  - A feature contains the minimum code to execute a functional requirement. 
-  - The purpose of grouping related elements of a feature is to increase cohesion.
-  - By convention, each feature module contains a:
-    - Controller
-    - Request/Response
-    - Validator
-    - Use case class (has the logic of the functional requirement)
-- **Infrastructure Layer.** Contains the implementation (concrete classes) of an interface defined in the shared layer. 
-  - The purpose of this layer is to hide external dependencies that you do not have control over.
-  - This layer is useful because it avoids exposing third party dependencies to other components, so if the dependency is changed/removed it should not affect any other component.
-  - Not all third party dependencies are added in this layer. For example, Entity Framework Core is used directly in the features to avoid introducing more complexity.
-- **ChatBot.** It is an plugin that allows a basic user to schedule appointments from a chatbot.
-- **Appointment Reminders.** It is a plugin that allows to send appointment reminders to patients through a background service.
-- **SendGrid Email.** It is a plugin that allows to send emails in cases such as:
-  - When a customer registers in the application, an email is sent to confirm the user's email address.
-  - When a user wants to reset their password, an email is sent with the security token.
-- **Twilio WhatsApp.** It is a plugin that allows to send messages by whatsapp in cases such as:
-  - When an appointment is scheduled from the chatbot, the user is sent the appointment information to whatsapp.
-  - When an employee needs to cancel an appointment, he/she should notify patients by whatsapp.
-- **IdentityDocument.Ecuador.** It is a plugin that allows to validate identity documents registered in Ecuador.
-  This plugin uses an [algorithm](https://www.skypack.dev/view/udv-ec) to verify if the identity document is valid or not.
-
-</details>
-
-### Core layer
-
-<details>
-<summary><b>Show diagram</b></summary>
-
-![core-layer](https://github.com/DentallApp/back-end/blob/dev/diagrams/core-layer.png)
-
-</details>
-
-<details>
-<summary><b>More details</b></summary>
-
-The above diagram describes in more detail which feature modules are contained in the core layer. 
-
-In the presented diagram it can be identified that the feature modules are not coupled to each other, the purpose of this is not to cause a [dependency hell](https://en.wikipedia.org/wiki/Dependency_hell), in order to maintain a dependency graph that is as simple as possible. The purpose is to make it easier to understand the parts of the backend application.
-
-</details>
-
-### Relational model
-
-<details>
-<summary><b>Show diagram</b></summary>
-
-![relational-model]([https://github.com/DentallApp/back-end/blob/dev/diagrams/relational-model.png](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/Mouth%20opening%20uing%20Intel%20REALSENSE%20camera.png))
-
-</details>
-
-<details>
-<summary><b>Show diagram</b></summary>
-
-![relational-model]([https://github.com/DentallApp/back-end/blob/dev/diagrams/relational-model.png](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/Mouth%20opening%20uing%20Intel%20REALSENSE%20camera.png))
-
-</details>
 
 
 ## Direct Line API
