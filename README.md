@@ -1,4 +1,4 @@
-# back-end
+# 
 This project was developed under BIRAC Amrit Grand Challenege JanCare in G H Raisoni College of Engineering,Nagpur in 2023-24
 
 OcanPredict is an AI-powered web application designed for the early screening of Oral Submucous Fibrosis (OSMF).
@@ -82,7 +82,7 @@ The **pyrealsense2** library is a Python wrapper for the Intel RealSense SDK, en
 users can access real-time data streams from the RealSense camera, including depth and color frames. This capability is particularly useful in applications that require precise spatial information.
 
 
-  ### AI Model on Intel Hugging Face for OSMF Classification
+  ### AI Model on Intel Hugging Face for OSMF Classification 
 **Training the Model**: The model was trained using standard deep learning libraries and datasets relevant to OSMF image classification.
 In our project, this free cloud-based solution allowed us to train our YOLO-based model, and optimize the model for real-time inferencing—all within a single, seamless environment.
 
@@ -113,7 +113,6 @@ In our project, this free cloud-based solution allowed us to train our YOLO-base
 - [ASP.NET Core](https://github.com/dotnet/aspnetcore)
 - [Microsoft Bot Framework](https://github.com/microsoft/botframework-sdk)
 - [AdaptiveCards](https://github.com/microsoft/AdaptiveCards)
-- [Twilio](https://github.com/twilio/twilio-csharp)
 - [SendGrid](https://github.com/sendgrid/sendgrid-csharp)
 - [SendGrid.Extensions.DependencyInjection](https://www.nuget.org/packages/SendGrid.Extensions.DependencyInjection)
 - [libphonenumber-csharp](https://github.com/twcclegg/libphonenumber-csharp)
@@ -139,15 +138,6 @@ In our project, this free cloud-based solution allowed us to train our YOLO-base
 - [File.TypeChecker](https://github.com/AJMitev/FileTypeChecker)
 - [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 - [FluentValidation.DependencyInjectionExtensions](https://www.nuget.org/packages/FluentValidation.DependencyInjectionExtensions)
-
-### Testing
-- [NUnit](https://github.com/nunit/nunit)
-- [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
-- [JustMock](https://github.com/telerik/JustMockLite)
-- [coverlet.msbuild](https://github.com/coverlet-coverage/coverlet)
-- [Respawn](https://github.com/jbogard/Respawn)
-- [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing)
-- [Microsoft.Bot.Builder.Testing](https://www.nuget.org/packages/Microsoft.Bot.Builder.Testing)
 
 ### Own libraries
 - [DotEnv.Core](https://github.com/MrDave1999/dotenv.core)
@@ -183,61 +173,6 @@ Software engineering concepts have been applied in this project:
 - [Vertical Slice Architecture in ASP.NET Core by Swapnil Meshram](https://www.linkedin.com/pulse/vertical-slice-architecture-aspnet-core-swapnil-meshram-sitsf)
 - [Vertical Slice Architecture in ASP.NET Core by Code Maze](https://code-maze.com/vertical-slice-architecture-aspnet-core)
 
-## Installation
-
-To run this application, it is recommended to install [Docker](https://docs.docker.com/get-docker), it is much easier to install the app with [Docker](https://docs.docker.com/get-docker).
-
-- Clone the repository with this command.
-```sh
-git clone https://github.com/DentallApp/back-end.git
-```
-- Change directory.
-```sh
-cd back-end
-```
-- Copy the contents of `.env.example` to `.env`.
-```sh
-cp .env.example .env
-# On Windows use the "xcopy" command.
-```
-- You must specify the [time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the Docker container. This is necessary for the calculation of available hours for a medical appointment to return consistent results.
-The logical thing to do would be to choose the time zone in which the dental clinic is located (which in this case would be **America/Guayaquil**).
-```sh
-echo -e '\nTZ=America/Guayaquil' >> .env
-```
-- Build the image and initiate services.
-```sh
-docker compose up --build -d
-```
-- Access the application with this URL.
-```
-http://localhost:5000/swagger
-```
-- If you wish to test the chatbot, you can do so with the [test client](https://github.com/DentallApp/webchat-client). Access this URL.
-```
-https://dentallapp.github.io/webchat-client
-```
-
-**NOTE:** Twilio.WhatsApp and SendGrid (these are plugins) are not loaded by default. So the app will use a fake provider that uses a console logger (useful for a development environment).
-
-## Plugin configuration
-
-By default only two plugins are loaded:
-- `Plugin.ChatBot.dll`
-- `Plugin.AppointmentReminders.dll`
-
-You can add other plugins by modifying the [PLUGINS](https://github.com/DentallApp/back-end/blob/52a0f58f8a721d731b0c21da75bb648eedb40d33/.env.example#L9-L12) key from the .env file:
-```.env
-PLUGINS="
-Plugin.ChatBot.dll
-Plugin.AppointmentReminders.dll
-Plugin.Twilio.WhatsApp.dll
-Plugin.SendGrid.dll
-"
-```
-Of course, for this to work, you will need to create an account on [Twilio](https://www.twilio.com/en-us) and [SendGrid](https://sendgrid.com/en-us), generate the necessary credentials and then add it to the .env file.
-
-You can also remove all plugins. The host application will work without any problems. 
 
 ## Credentials
 
