@@ -233,10 +233,12 @@ This project uses [resource files](https://github.com/DentallApp/back-end/tree/d
 ![Mouth opining using intel real sense camera](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/Mouth%20opening%20uing%20Intel%20REALSENSE%20camera.png)
 
 </details>
-
 <details>
-<summary><b>More details</b></summary>
-<br/>
+<summary><b>Show diagram</b></summary>
+
+![OAMF L=lesion classification](https://github.com/parth-deshmukh-code/OCan_Predict/blob/dev/diagrams/OSMF%20lesion%20classification.png)
+
+</details>
 
 
 ## Direct Line API
